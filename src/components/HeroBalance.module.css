@@ -1,0 +1,27 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.label {
+  font-size: var(--fs-hint);
+  font-weight: var(--fw-hint);
+  line-height: var(--lh);
+  color: var(--hint);
+}
+
+.value {
+  font-size: var(--fs-number);
+  font-weight: var(--fw-number);
+  line-height: var(--lh);
+  font-variant-numeric: tabular-nums;
+}

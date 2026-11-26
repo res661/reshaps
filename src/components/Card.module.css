@@ -1,0 +1,9 @@
+.card {
+  background: var(--card);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.padded {
+  padding: var(--space-16);
+}

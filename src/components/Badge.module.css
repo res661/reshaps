@@ -1,0 +1,45 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 var(--space-8);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  line-height: var(--lh);
+  white-space: nowrap;
+  background: color-mix(in srgb, var(--text) 10%, var(--card));
+  color: var(--text);
+}
+
+.accent {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.success {
+  background: color-mix(in srgb, var(--success) 20%, var(--card));
+  color: var(--success);
+}
+
+.error {
+  background: color-mix(in srgb, var(--error) 20%, var(--card));
+  color: var(--error);
+}
+
+.warning {
+  background: color-mix(in srgb, var(--warning) 22%, var(--card));
+  color: var(--warning);
+}
+
+:root[data-theme='light'] .success {
+  color: color-mix(in srgb, var(--success) 42%, #000);
+}
+
+:root[data-theme='light'] .error {
+  color: color-mix(in srgb, var(--error) 72%, #000);
+}
+
+:root[data-theme='light'] .warning {
+  color: color-mix(in srgb, var(--warning) 58%, #000);
+}

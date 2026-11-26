@@ -1,0 +1,73 @@
+.row {
+  position: relative;
+  width: 100%;
+  min-height: 54px;
+  padding: 8px var(--space-16);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  background: transparent;
+  border: 0;
+  text-align: left;
+  color: var(--text);
+}
+
+.label {
+  font-size: var(--fs-title);
+  font-weight: var(--fw-title);
+  line-height: var(--lh);
+}
+
+.switch {
+  width: 51px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  flex: none;
+  display: flex;
+  align-items: center;
+}
+
+.track {
+  width: 51px;
+  height: 31px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--text) 18%, var(--card));
+  position: relative;
+  transition: background var(--dur) var(--ease);
+}
+
+.track[data-on='true'] {
+  background: var(--accent);
+}
+
+.thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 27px;
+  height: 27px;
+  border-radius: var(--radius-pill);
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform var(--dur) var(--ease);
+}
+
+.track[data-on='true'] .thumb {
+  transform: translateX(20px);
+}
+
+.row:disabled {
+  opacity: 0.4;
+}
+
+.row:active:not(:disabled) .track {
+  filter: brightness(0.92);
+}
+
+.row:focus-visible {
+  outline: 1.5px solid var(--accent);
+  outline-offset: -1.5px;
+}
