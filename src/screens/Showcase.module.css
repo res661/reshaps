@@ -1,0 +1,82 @@
+.header h1 {
+  font-size: var(--fs-screen);
+  font-weight: var(--fw-screen);
+  line-height: var(--lh);
+}
+
+.header p {
+  margin-top: 2px;
+  font-size: var(--fs-hint);
+  font-weight: var(--fw-hint);
+  line-height: var(--lh);
+  color: var(--hint);
+}
+
+.stories {
+  margin-inline: calc(var(--page-pad) * -1);
+  padding-inline: var(--page-pad);
+  scroll-padding-inline: var(--page-pad);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.controls > * + * {
+  position: relative;
+}
+
+.controls > * + *::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 16px;
+  right: 0;
+  height: 1px;
+  background: var(--line);
+  pointer-events: none;
+}
+
+.skel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.skelText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.note {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: var(--lh);
+}
+
+.center {
+  text-align: center;
+}
+
+.back {
+  align-self: flex-start;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--link);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: var(--lh);
+}

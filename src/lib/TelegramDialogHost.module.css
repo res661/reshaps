@@ -1,0 +1,60 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: var(--space-16);
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.card {
+  position: relative;
+  width: min(340px, 100%);
+  background: var(--card);
+  border-radius: var(--radius-card);
+  padding: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  animation: dialog-in var(--dur) var(--ease);
+}
+
+.title {
+  font-size: 17px;
+  font-weight: var(--fw-title);
+  line-height: var(--lh);
+  text-align: center;
+}
+
+.message {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: var(--lh);
+  text-align: center;
+  color: var(--text);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

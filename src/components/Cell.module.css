@@ -1,0 +1,108 @@
+.cell {
+  position: relative;
+  width: 100%;
+  min-height: 54px;
+  padding: 8px var(--space-16);
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  background: transparent;
+  border: 0;
+  text-align: left;
+  color: var(--text);
+  transition: background var(--dur) var(--ease);
+}
+
+.cell + .cell::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 16px;
+  right: 0;
+  height: 1px;
+  background: var(--line);
+  pointer-events: none;
+}
+
+.cell + .cell[data-icon='true']::before {
+  left: 64px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--fs-title);
+  font-weight: var(--fw-title);
+  line-height: var(--lh);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sub {
+  font-size: var(--fs-hint);
+  font-weight: var(--fw-hint);
+  line-height: var(--lh);
+  color: var(--hint);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.right {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex: none;
+  max-width: 46%;
+  color: var(--hint);
+}
+
+.value {
+  font-size: 14px;
+  font-weight: var(--fw-hint);
+  line-height: var(--lh);
+  color: var(--hint);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cell[data-error='true'] .title,
+.cell[data-error='true'] .value {
+  color: var(--danger);
+}
+
+.cell:disabled:not([aria-busy='true']),
+.cell[data-disabled='true'] {
+  opacity: 0.4;
+}
+
+.cell:active:not(:disabled) {
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cell:hover:not(:disabled) {
+    background: color-mix(in srgb, var(--text) 5%, transparent);
+  }
+}
+
+.cell:focus-visible {
+  outline: 1.5px solid var(--accent);
+  outline-offset: -1.5px;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--hint);
+  border-right-color: transparent;
+  border-radius: var(--radius-pill);
+  animation: spin 0.7s linear infinite;
+}

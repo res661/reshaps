@@ -1,0 +1,52 @@
+.wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: calc(var(--space-12) + var(--safe-top));
+  width: min(406px, calc(100% - 24px));
+  margin-inline: auto;
+  z-index: 70;
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-16);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--card) 82%, var(--text));
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: var(--lh);
+  border: 1px solid var(--line);
+  animation: toast-in var(--dur) var(--ease);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--hint);
+  flex: none;
+}
+
+.success {
+  background: var(--success);
+}
+
+.error {
+  background: var(--error);
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

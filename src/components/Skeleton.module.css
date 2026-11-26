@@ -1,0 +1,5 @@
+.bone {
+  display: block;
+  background: color-mix(in srgb, var(--text) 8%, var(--card));
+  animation: pulse 1.2s ease-in-out infinite;
+}

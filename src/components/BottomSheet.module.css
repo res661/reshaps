@@ -1,0 +1,79 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+}
+
+.root[data-open='true'] {
+  pointer-events: auto;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur) var(--ease);
+}
+
+.sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: min(430px, 100%);
+  margin-inline: auto;
+  max-height: min(85dvh, 640px);
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+  transform: translateY(calc(100% + 24px));
+  pointer-events: none;
+  transition: transform 220ms var(--ease);
+  padding-bottom: calc(var(--space-12) + var(--safe-bottom));
+  outline: none;
+}
+
+.root[data-open='true'] .backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.root[data-open='true'] .sheet {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.handleZone {
+  padding: var(--space-8) var(--space-16) var(--space-12);
+  touch-action: none;
+  cursor: grab;
+}
+
+.handle {
+  width: 36px;
+  height: 4px;
+  margin: 0 auto var(--space-12);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--text) 24%, transparent);
+}
+
+.title {
+  font-size: 17px;
+  font-weight: var(--fw-title);
+  line-height: var(--lh);
+  text-align: center;
+}
+
+.body {
+  padding: 0 var(--space-16) var(--space-8);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}

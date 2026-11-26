@@ -1,0 +1,40 @@
+.tile {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-tile);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex: none;
+}
+
+.tile svg {
+  width: 20px;
+  height: 20px;
+}
+
+.blue {
+  background: var(--tile-blue);
+}
+.red {
+  background: var(--tile-red);
+}
+.purple {
+  background: var(--tile-purple);
+}
+.green {
+  background: var(--tile-green);
+}
+.orange {
+  background: var(--tile-orange);
+}
+.cyan {
+  background: var(--tile-cyan);
+}
+.pink {
+  background: var(--tile-pink);
+}
+.slate {
+  background: var(--tile-slate);
+}
